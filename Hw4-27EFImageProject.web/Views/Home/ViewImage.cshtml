@@ -1,0 +1,27 @@
+﻿@using Hw4_27EFImageProject.Data
+@model ViewImageViewModel
+
+    <div class="container" id="current-image" data-image-id="@Model.Image.Id">
+        <h1>@Model.Image.URL</h1>
+        <br />
+        <h1>@Model.Image.Title</h1>
+
+
+        @if (Model.ImageIdsLiked.Contains(Model.Image.Id))
+        {
+            <button class="btn btn-primary" disabled>Like</button>
+        }
+        else
+        {
+            <button id="like-image" data-image-id=@Model.Image.Id class="btn btn-primary">Like</button>
+        }
+
+        <h1 id="likes-amount">@Model.Image.Likes Likes</h1>
+    </div>
+
+
+
+@section scripts
+{
+    <script src="/js/ViewImage.js"></script>
+}

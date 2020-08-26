@@ -1,0 +1,20 @@
+﻿@using Hw4_27EFImageProject.Data
+@model List<Image>
+<!-- all images -->
+<div class="container">
+    <table style="margin-top: 12px" class="table table-bordered table-hover table-striped">
+        <tr class="text-center">
+            <th>Image</th>
+            <th>Title</th>
+            <th>Date Uploaded</th>
+        </tr>
+        @foreach (Image i in Model)
+        {
+            <tr>
+                <td><a href="/home/ViewImage?imageId=@i.Id">@i.URL</a></td>
+                <td><a href="/home/ViewImage?imageId=@i.Id">@i.Title</a></td>
+                <td>@i.DateUploaded</td>
+            </tr>
+        }
+    </table>
+</div>
